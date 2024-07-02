@@ -1,0 +1,17 @@
+services:
+  backenduser:
+    container_name: backendUser
+    build:
+      context: ./backendUser
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./backendUser:/app
+  backendexternal:
+    container_name: backendExternal
+    build:
+      context: ./backendExternal
+    ports:
+      - "5002:5000"
+    volumes:
+      - ./backendExternal:/app
