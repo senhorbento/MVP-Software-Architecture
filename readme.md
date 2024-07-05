@@ -1,6 +1,7 @@
 # Projeto de APIs com Flask e Swagger
 
-Este projeto consiste em duas APIs simples desenvolvidas com Flask e Swagger para CRUD de usuários. Cada API está contida em seu próprio diretório e pode ser executada utilizando Docker e Docker Compose.
+Este projeto consiste em duas APIs simples desenvolvidas com Flask e Swagger uma para CRUD de usuários que controla o acesso a segunda api de acesso a apis Externas.  
+Cada API está contida em seu próprio diretório e pode ser executada utilizando Docker e Docker Compose.
 
 ## Estrutura do Projeto
 
@@ -23,9 +24,9 @@ Este projeto consiste em duas APIs simples desenvolvidas com Flask e Swagger par
 
 ## Configuração
 
-### Passo 1: Clone o Repositório
+### Clonar os Repositórios
 
-Clone este repositório em sua máquina local:
+Clone estes repositórios em sua máquina local:
 
 ```sh
 git clone https://github.com/senhorbento/MVP-Software-Architecture
