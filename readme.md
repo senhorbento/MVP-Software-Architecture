@@ -1,6 +1,6 @@
 # Projeto de APIs com Flask e Swagger
 
-Este projeto consiste em duas APIs simples desenvolvidas com Flask e Swagger uma para CRUD de usuários que controla o acesso a segunda api de acesso a apis Externas.  
+Este projeto consiste em duas APIs simples desenvolvidas com Flask e Swagger. Uma para CRUD de usuários que controla o acesso à segunda api, que faz acesso a [apis Externas](https://github.com/senhorbento/backendExternal).  
 Cada API está contida em seu próprio diretório e pode ser executada utilizando Docker e Docker Compose.
 
 ## Estrutura do Projeto
@@ -15,6 +15,10 @@ Cada API está contida em seu próprio diretório e pode ser executada utilizand
 │ ├── Dockerfile  
 │ └── requirements.txt  
 └── docker-compose.yml  
+
+## Fluxograma básico da aplicação
+
+<img src="Fluxogram.png" alt="Arduino Uno">
 
 
 ## Pré-requisitos
