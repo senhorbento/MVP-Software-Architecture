@@ -227,6 +227,7 @@ def delete_user(user_id):
 def get_posts(user_id):
     """
     Obter todos os posts, desde que o user tenha acesso.
+    Necessário acesso de nível 3 ou maior.
     ---
     parameters:
         - name: user_id
@@ -258,7 +259,7 @@ def get_posts(user_id):
             description: Não Autorizado
     """
     acess_level = get_access_level_by_id(user_id)
-    if acess_level < 1:
+    if acess_level < 3:
         return jsonify({'error': 'Não Autorizado'}), 401
     response = requests.get(f'{_URL_BASE_}/posts')
     posts = response.json()
@@ -268,6 +269,7 @@ def get_posts(user_id):
 def get_post(post_id, user_id):
     """
     Obter um post específico por ID, desde que o user tenha acesso.
+    Necessário acesso de nível 1 ou maior.
     ---
     parameters:
         - name: post_id
@@ -312,6 +314,7 @@ def get_post(post_id, user_id):
 def get_cep(cep, user_id):
     """
     Obter informações sobre um CEP, desde que o user tenha acesso.
+    Necessário acesso de nível 2 ou maior.
     ---
     parameters:
         - name: cep
