@@ -31,6 +31,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 swagger = Swagger(app)
 
+_URL_BASE_ = 'http://backendexternal:5001/'
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(50), unique=True, nullable=False)
@@ -258,7 +260,7 @@ def get_posts(user_id):
     acess_level = get_access_level_by_id(user_id)
     if acess_level < 1:
         return jsonify({'error': 'Não Autorizado'}), 401
-    response = requests.get('http://127.0.0.1:5001/posts')
+    response = requests.get(f'{_URL_BASE_}/posts')
     posts = response.json()
     return jsonify(posts), 200
 
@@ -302,8 +304,7 @@ def get_post(post_id, user_id):
     acess_level = get_access_level_by_id(user_id)
     if acess_level < 1:
         return jsonify({'error': 'Não Autorizado'}), 401
-    response = requests.get(
-        f'http://127.0.0.1:5001/posts/{post_id}')
+    response = requests.get(f'{_URL_BASE_}/posts/{post_id}')
     post = response.json()
     return jsonify(post), 200
 
@@ -369,7 +370,7 @@ def get_cep(cep, user_id):
     acess_level = get_access_level_by_id(user_id)
     if acess_level < 2:
         return jsonify({'error': 'Não Autorizado'}), 401
-    response = requests.get(f'http://127.0.0.1:5001/ws/{cep}/json/')
+    response = requests.get(f'{_URL_BASE_}/ws/{cep}/json/')
     if response.status_code == 200:
         data = response.json()
         if 'erro' in data:

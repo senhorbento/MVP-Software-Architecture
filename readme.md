@@ -20,7 +20,6 @@ Cada API está contida em seu próprio diretório e pode ser executada utilizand
 
 <img src="Fluxogram.png" alt="Arduino Uno">
 
-
 ## Pré-requisitos
 
 - Docker: [Instale o Docker](https://docs.docker.com/get-docker/)

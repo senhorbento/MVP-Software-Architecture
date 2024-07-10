@@ -7,6 +7,8 @@ services:
       - "5001:5001"
     volumes:
       - ./backendExternal:/app
+    networks:
+      - intranet
   backenduser:
     container_name: backendUser
     build:
@@ -15,3 +17,9 @@ services:
       - "5002:5002"
     volumes:
       - ./backendUser:/app
+    networks:
+      - intranet
+
+networks:
+  intranet:
+    driver: bridge
