@@ -373,7 +373,7 @@ def get_cep(cep, user_id):
     acess_level = get_access_level_by_id(user_id)
     if acess_level < 2:
         return jsonify({'error': 'Não Autorizado'}), 401
-    response = requests.get(f'{_URL_BASE_}/ws/{cep}/json/')
+    response = requests.get(f'{_URL_BASE_}/cep/{cep}')
     if response.status_code == 200:
         data = response.json()
         if 'erro' in data:
